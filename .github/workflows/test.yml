@@ -1,0 +1,13 @@
+name: Test
+on:
+    pull_request: # PR発生時に起動
+        paths: ['go/**/*.go'] # goディレクトリ以下のGo言語ファイルに変更があった場合に起動
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4 # ステップ１：コードのチェックアウト
+            - uses: actions/setup-go@v5 # ステップ２：言語のセットアップ
+              with:
+                go-version: '1.22'
+            - run: go test go/excellent/*.go # ステップ３：テストの実行
