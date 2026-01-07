@@ -7,7 +7,7 @@ jobs:
             pull-requests: write # Pull Requestsの書き込み権限を付与
             contents: read # リポジトリ内容の読み取り権限を付与
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
             - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_ACTOR}" # GitHub APIを使用してPRにコメント
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHubトークンを環境変数にセット

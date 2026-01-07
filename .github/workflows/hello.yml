@@ -5,4 +5,4 @@ jobs:
         runs-on: ubuntu-latest # ランナー（Ubuntuで実行）
         steps: # ステップの定義
             - run: echo "Hello, World" # シェルコマンド実行
-            - uses: actions/checkout@v4 # アクションの呼び出し
+            - uses: actions/checkout@v6 # アクションの呼び出し
